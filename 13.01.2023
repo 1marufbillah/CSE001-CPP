@@ -1,0 +1,57 @@
+PROGRAM 1:
+Create a class named 'Rectangle' with two data members- length and breadth and a function to calculate the area which is 'length*breadth'. The class has three constructors which are :
+1 - having no parameter - values of both length and breadth are assigned zero.
+2 - having two numbers as parameters - the two numbers are assigned as length and breadth respectively.
+3 - having one number as parameter - both length and breadth are assigned that number.
+Now, create objects of the 'Rectangle' class having none, one and two parameters and print their areas.
+
+
+class Rectangle {
+    private:
+        int length, breadth;
+
+    public:
+        // Constructor with no parameters
+        Rectangle() {
+            length = 0;
+            breadth = 0;
+        }
+
+        // Constructor with two parameters
+        Rectangle(int l, int b) {
+            length = l;
+            breadth = b;
+        }
+
+        // Constructor with one parameter
+        Rectangle(int x) {
+            length = x;
+            breadth = x;
+        }
+
+        // Function to calculate area
+        int area() {
+            return length * breadth;
+        }
+};
+
+int main() {
+    // Object with no parameters
+    Rectangle r1;
+    cout << "Area of r1: " << r1.area() << endl;
+
+    // Object with one parameter
+    Rectangle r2(5);
+    cout << "Area of r2: " << r2.area() << endl;
+
+    // Object with two parameters
+    Rectangle r3(4, 5);
+    cout << "Area of r3: " << r3.area() << endl;
+
+    return 0;
+}
+
+Output:
+Area of r1: 0
+Area of r2: 25
+Area of r3: 20
