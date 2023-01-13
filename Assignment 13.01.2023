@@ -1,0 +1,208 @@
+PROGRAM 1:
+Create a class named 'Rectangle' with two data members- length and breadth and a function to calculate the area which is 'length*breadth'. The class has three constructors which are :
+1 - having no parameter - values of both length and breadth are assigned zero.
+2 - having two numbers as parameters - the two numbers are assigned as length and breadth respectively.
+3 - having one number as parameter - both length and breadth are assigned that number.
+Now, create objects of the 'Rectangle' class having none, one and two parameters and print their areas.
+
+
+class Rectangle {
+    private:
+        int length, breadth;
+
+    public:
+        // Constructor with no parameters
+        Rectangle() {
+            length = 0;
+            breadth = 0;
+        }
+
+        // Constructor with two parameters
+        Rectangle(int l, int b) {
+            length = l;
+            breadth = b;
+        }
+
+        // Constructor with one parameter
+        Rectangle(int x) {
+            length = x;
+            breadth = x;
+        }
+
+        // Function to calculate area
+        int area() {
+            return length * breadth;
+        }
+};
+
+int main() {
+    // Object with no parameters
+    Rectangle r1;
+    cout << "Area of r1: " << r1.area() << endl;
+
+    // Object with one parameter
+    Rectangle r2(5);
+    cout << "Area of r2: " << r2.area() << endl;
+
+    // Object with two parameters
+    Rectangle r3(4, 5);
+    cout << "Area of r3: " << r3.area() << endl;
+
+    return 0;
+}
+
+Output:
+Area of r1: 0
+Area of r2: 25
+Area of r3: 20
+
+PROGRAM 2
+Create a class named 'Programming'. While creating an object of the class, if nothing is passed to it, then the message "I love programming languages" should be printed. If some String is passed to it, then in place of "programming languages" the name of that String variable should be printed.
+For example, while creating the object if we pass "cpp", then "I love cpp" should be printed.
+
+class Programming {
+    private:
+        string language;
+    public:
+        // Constructor with no parameters
+        Programming() {
+            cout << "I love programming languages" << endl;
+        }
+
+        // Constructor with one parameter
+        Programming(string lang) {
+            language = lang;
+            cout << "I love " << language << endl;
+        }
+};
+
+int main() {
+    // Object with no parameters
+    Programming p1;
+
+    // Object with one parameter
+    Programming p2("cpp");
+
+    return 0;
+}
+
+Output:
+I love programming languages
+I love cpp
+
+
+PROGRAM 3
+Create a class to print the area of a square and a rectangle. The class has two functions with the same name but different number of parameters. 
+The function for printing the area of rectangle has two parameters which are its length and breadth respectively while the other function for 
+printing the area of square has one parameter which is the side of the square.
+
+
+class Shape {
+    public:
+        // Function to calculate area of rectangle
+        void area(int length, int breadth) {
+            cout << "Area of rectangle: " << length * breadth << endl;
+        }
+
+        // Function to calculate area of square
+        void area(int side) {
+            cout << "Area of square: " << side * side << endl;
+        }
+};
+
+int main() {
+    Shape s;
+    s.area(5, 6); // for rectangle
+    s.area(7); // for square
+
+    return 0;
+}
+
+Output:
+Area of rectangle: 30
+Area of square: 49
+
+PROGRAM 4
+**A class has an integer data member 'i' and a function named 'printNum' to print the value of 'i'. Its subclass also has an integer data member 
+'j' and a function named 'printNum' to print the value of 'j'. Make an object of the subclass and use it to assign a value to 'i' and to 'j'. 
+Now call the function 'printNum' by this object.**
+
+class SuperClass {
+    protected:
+        int i;
+    public:
+        void printNum() {
+            cout << "i: " << i << endl;
+        }
+};
+
+class SubClass : public SuperClass {
+    private:
+        int j;
+    public:
+        void printNum() {
+            cout << "j: " << j << endl;
+        }
+};
+
+int main() {
+    SubClass obj;
+    obj.i = 5;
+    obj.j = 10;
+    obj.printNum();
+
+    return 0;
+}
+
+Output:
+j: 10
+
+
+PROGRAM  5
+Create a class 'Student' with three data members which are name, age and address. The constructor of the class assigns default values to name as "unknown", 
+age as '0' and address as "not available". It has two functions with the same name 'setInfo'. First function has two parameters for name and age and assigns 
+the same whereas the second function takes has three parameters which are assigned to name, age and address respectively. 
+Print the name, age and address of 10 students.
+
+class Student {
+    private:
+        string name;
+        int age;
+        string address;
+
+    public:
+        // Default constructor
+        Student() {
+            name = "unknown";
+            age = 0;
+            address = "not available";
+        }
+
+        // Function to set name and age
+        void setInfo(string n, int a) {
+            name = n;
+            age = a;
+        }
+
+        // Function to set name, age and address
+        void setInfo(string n, int a, string ad) {
+            name = n;
+            age = a;
+            address = ad;
+        }
+
+        void printInfo() {
+            cout << "Name: " << name << endl;
+            cout << "Age: " << age << endl;
+            cout << "Address: " << address << endl;
+        }
+};
+
+int main() {
+    Student students[10];
+    for (int i = 0; i < 10; i++) {
+        students[i].setInfo("Billah", 20, "Bangladesh");
+        students[i].printInfo();
+    }
+    return 0;
+}
