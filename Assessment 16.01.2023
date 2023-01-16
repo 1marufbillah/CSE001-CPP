@@ -1,0 +1,109 @@
+Program 1
+==================
+Create a base class "Vehicle" with protected member variables "make" and "model" and public member functions 
+"getMake()" and "getModel()" that return the values of "make" and "model" respectively. Create a derived class "Car" that 
+inherits from "Vehicle" and has a public member function "displayInfo()" that displays the make and model of the car.
+
+
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+protected:
+    string make;
+    string model;
+
+public:
+    string getMake() {
+        return make;
+    }
+
+    string getModel() {
+        return model;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void displayInfo() {
+        cout << "Make: " << getMake() << endl;
+        cout << "Model: " << getModel() << endl;
+    }
+};
+
+
+class Vehicle {
+protected:
+    string make;
+    string model;
+
+public:
+    string getMake() {
+        return make;
+    }
+
+    string getModel() {
+        return model;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void displayInfo() {
+        cout << "Make: " << getMake() << endl;
+        cout << "Model: " << getModel() << endl;
+    }
+};
+
+
+Program 2
+======================
+Create a base class "Animal" with protected member variable "name" and public member function "getName()" that returns the value of "name".
+Create a derived class "Mammals" that inherits from "Animals" and has a protected member variable "numLegs" and public member function "getNumLegs()"
+that returns the value of "numLegs".
+
+
+
+#include <iostream>
+using namespace std;
+
+class Animals {
+protected:
+    string name;
+
+public:
+    string getName() {
+        return name;
+    }
+    void setName(string name) {
+        this->name = name;
+    }
+};
+
+class Mammals : public Animals {
+protected:
+    int numLegs;
+
+public:
+    int getNumLegs() {
+        return numLegs;
+    }
+    void setNumLegs(int numLegs) {
+        this->numLegs = numLegs;
+    }
+};
+
+
+int main()
+{
+    Mammals mammal;
+    mammal.setName("Elephant");
+    mammal.setNumLegs(4);
+    cout<<"Name: "<<mammal.getName()<<endl;
+    cout<<"Number of legs: "<<mammal.getNumLegs()<<endl;
+}
+
+
+Output:
+Name: Elephant
+Number of legs: 4
