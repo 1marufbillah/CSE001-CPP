@@ -32,3 +32,11 @@ int main() {
     cout << "Employee information saved to file." << endl;
     return 0;
 }
+
+
+Program 2
+========================
+Write a class called "File" that includes functions for opening, reading, and writing to a file. 
+The class should have a constructor that takes the file name as a parameter and opens the file. 
+The class should also have a destructor that closes the file.
+
