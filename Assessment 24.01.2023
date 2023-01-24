@@ -40,3 +40,7 @@ Write a class called "File" that includes functions for opening, reading, and wr
 The class should have a constructor that takes the file name as a parameter and opens the file. 
 The class should also have a destructor that closes the file.
 
+Program 3
+========================
+Write a class called "Book" that includes title, author, and ISBN as member variables. 
+Write functions called "save" and "load" that use the "File" class to store and retrieve a list of books from a file.
