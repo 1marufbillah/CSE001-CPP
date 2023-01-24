@@ -1,0 +1,34 @@
+Program 1
+===========================
+Write a class called "Employee" that includes a name, ID, and salary as member variables. 
+Write a function called "save" that writes the employee's information to a file using the "File" class.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+class Employee {
+public:
+    string name;
+    int ID;
+    float salary;
+
+    void save() {
+        ofstream outFile;
+        outFile.open("employee.txt", ios::out);
+        outFile << name << endl << ID << endl << salary;
+        outFile.close();
+    }
+};
+
+int main() {
+    Employee emp1;
+    emp1.name = "Mohd. Maruf Billah";
+    emp1.ID = 123456;
+    emp1.salary = 97000;
+
+    emp1.save();
+    cout << "Employee information saved to file." << endl;
+    return 0;
+}
